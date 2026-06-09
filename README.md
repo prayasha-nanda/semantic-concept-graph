@@ -286,9 +286,10 @@ Larger nodes generally represent more influential concepts.
 
 ---
 
-## Built by yours truly
+## Built by yours truly...
 
 Prayasha Nanda.
+
 Initially started out as a fun experiment to see how structured (or unstructured!) my writing was, and then I built this fun way to summarize the content to make even 3,000 word articles interesting to explore!
 
 ## License
