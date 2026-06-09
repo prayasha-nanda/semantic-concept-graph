@@ -1,7 +1,13 @@
 # Semantic Concept Graph Generator
 
+
+
+Ever tried reading a massive block of text and wished you could just *see* how all the ideas, themes, and characters smash into each other?
+
+This tool takes raw, unstructured text and uses **Gemini 2.5 Flash** to extract semantic concepts (meaningful entities, themes, emotions, concepts, and relationships from natural language text), validates them with **Pydantic**, crunches the mathematical clusters using **NetworkX**, and spins up an interactive network graph courtesy of **PyVis** (that you can play with thanks to the physics setting!).
+
 <p align="center">
-  <img src="https://img.shields.io/badge/python-3.12%2B-blue?style=flat&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/python-3.10%2B-blue?style=flat&logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/NetworkX-Graph%20Engine-green?style=flat" alt="NetworkX">
   <img src="https://img.shields.io/badge/PyVis-Interactive%20Visualization-teal?style=flat" alt="PyVis">
   <img src="https://img.shields.io/badge/Pydantic-Validation-red?style=flat" alt="Pydantic">
@@ -10,11 +16,6 @@
   <img src="https://img.shields.io/badge/Gemini%20AI-2.5%20Flash-orange?style=flat&logo=google&logoColor=white" alt="Gemini">
   <img src="https://img.shields.io/badge/license-MIT-purple?style=flat" alt="License">
 </p>
-
-
-Ever tried reading a massive block of text and wished you could just *see* how all the ideas, themes, and characters smash into each other?
-
-This tool takes raw, unstructured text and uses **Gemini 2.5 Flash** to extract semantic concepts (meaningful entities, themes, emotions, concepts, and relationships from natural language text), validates them with **Pydantic**, crunches the mathematical clusters using **NetworkX**, and spins up an interactive network graph courtesy of **PyVis** (that you can play with thanks to the physics setting!).
 
 ---
 ## Quick TL;DR - What It Does
