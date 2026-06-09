@@ -29,6 +29,7 @@ Article, novel chapter, research paper, design document, etc. (Save as sample.tx
 
 Output:
 Interactive semantic concept graph + static Matplotlib rendering of the same graph
+
 ---
 
 ## Features
@@ -86,6 +87,7 @@ You can look at my sample outputs for this [article](https://medium.com/@prayash
 You can zoom, drag nodes around, and explore the graph!
 
 The static graph struggles with many relationships and connections, which you can see here, but it is still very helpful if you just want to get to the point! Sometimes the interactive graph may feel like it gives too much information.
+
 ![Sample Static Graph](samples/sample_static_blueprint.png)
 
 ---
@@ -286,8 +288,9 @@ Larger nodes generally represent more influential concepts.
 ## Built by yours truly
 
 Prayasha Nanda.
-Initially started out as a fun experiment to see how structured (or unstructured!) my writing was, and then I built this fun way to summarize the content to make even 3000 word articles interesting to explore!
+Initially started out as a fun experiment to see how structured (or unstructured!) my writing was, and then I built this fun way to summarize the content to make even 3,000 word articles interesting to explore!
 
 ## License
 MIT License.
+
 Copyright (c) 2026 Prayasha Nanda
