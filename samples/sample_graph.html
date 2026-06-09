@@ -1,0 +1,400 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 750px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+
+<div style='
+    padding:16px;
+    font-family:sans-serif;
+    background:#0f172a;
+    color:white;
+    border-radius:12px;
+    margin:12px;
+'>
+    <h3 style='margin-top:0;'>Categories</h3>
+
+    <div style='
+        display:grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap:10px;
+        max-width:900px;
+    '>
+
+    <div style='display:flex;align-items:center;gap:8px;'>
+        <div style='
+            width:14px;
+            height:14px;
+            background:#00ffff;
+            border-radius:50%;
+            flex-shrink:0;
+        '></div>
+
+        <span style='font-size:14px;'>
+            Author Experience
+        </span>
+    </div>
+    
+    <div style='display:flex;align-items:center;gap:8px;'>
+        <div style='
+            width:14px;
+            height:14px;
+            background:#f43f5e;
+            border-radius:50%;
+            flex-shrink:0;
+        '></div>
+
+        <span style='font-size:14px;'>
+            Book Project
+        </span>
+    </div>
+    
+    <div style='display:flex;align-items:center;gap:8px;'>
+        <div style='
+            width:14px;
+            height:14px;
+            background:#f59e0b;
+            border-radius:50%;
+            flex-shrink:0;
+        '></div>
+
+        <span style='font-size:14px;'>
+            Publication
+        </span>
+    </div>
+    
+    <div style='display:flex;align-items:center;gap:8px;'>
+        <div style='
+            width:14px;
+            height:14px;
+            background:#8b5cf6;
+            border-radius:50%;
+            flex-shrink:0;
+        '></div>
+
+        <span style='font-size:14px;'>
+            Goal Setting
+        </span>
+    </div>
+    
+    <div style='display:flex;align-items:center;gap:8px;'>
+        <div style='
+            width:14px;
+            height:14px;
+            background:#10b981;
+            border-radius:50%;
+            flex-shrink:0;
+        '></div>
+
+        <span style='font-size:14px;'>
+            Mindset
+        </span>
+    </div>
+    
+    <div style='display:flex;align-items:center;gap:8px;'>
+        <div style='
+            width:14px;
+            height:14px;
+            background:#5d9afb;
+            border-radius:50%;
+            flex-shrink:0;
+        '></div>
+
+        <span style='font-size:14px;'>
+            Writing Process
+        </span>
+    </div>
+    
+    <div style='display:flex;align-items:center;gap:8px;'>
+        <div style='
+            width:14px;
+            height:14px;
+            background:#ec4899;
+            border-radius:50%;
+            flex-shrink:0;
+        '></div>
+
+        <span style='font-size:14px;'>
+            Writing Technique
+        </span>
+    </div>
+    
+    <div style='display:flex;align-items:center;gap:8px;'>
+        <div style='
+            width:14px;
+            height:14px;
+            background:#06b6d4;
+            border-radius:50%;
+            flex-shrink:0;
+        '></div>
+
+        <span style='font-size:14px;'>
+            Challenge
+        </span>
+    </div>
+    
+    <div style='display:flex;align-items:center;gap:8px;'>
+        <div style='
+            width:14px;
+            height:14px;
+            background:#84cc16;
+            border-radius:50%;
+            flex-shrink:0;
+        '></div>
+
+        <span style='font-size:14px;'>
+            Advice
+        </span>
+    </div>
+    
+</div>
+<hr style='margin:16px 0;border:1px solid #334155;'>
+
+<details>
+    <summary style='
+        cursor:pointer;
+        font-size:16px;
+        font-weight:bold;
+        margin-bottom:10px;
+    '>
+        Detected Semantic Communities
+    </summary>
+
+    <div style='display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;'>
+
+        <div style='
+            width:14px;
+            height:14px;
+            border-radius:50%;
+            background:#ff007f;
+            flex-shrink:0;
+            margin-top:3px;
+        '></div>
+
+        <div>
+            <div style='font-size:14px;font-weight:bold;'>
+                Community 1
+                (12 nodes)
+            </div>
+
+            <div style='
+                font-size:12px;
+                color:#cbd5e1;
+                margin-top:2px;
+            '>
+                Academic Commitments, Author, Bad Page Better Than Blank, Creative Flow, Criticism, Daily Writing Goals, Deadlines, Momentum, Nanowrimo, Publishing Agreement, Self Publishing, Smaller Deadlines
+            </div>
+        </div>
+
+    </div>
+    
+    <div style='display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;'>
+
+        <div style='
+            width:14px;
+            height:14px;
+            border-radius:50%;
+            background:#14b8a6;
+            flex-shrink:0;
+            margin-top:3px;
+        '></div>
+
+        <div>
+            <div style='font-size:14px;font-weight:bold;'>
+                Community 2
+                (4 nodes)
+            </div>
+
+            <div style='
+                font-size:12px;
+                color:#cbd5e1;
+                margin-top:2px;
+            '>
+                Debut Novel, Editing, Moon Of Yesterday, Word Count Goals
+            </div>
+        </div>
+
+    </div>
+    
+    <div style='display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;'>
+
+        <div style='
+            width:14px;
+            height:14px;
+            border-radius:50%;
+            background:#ffaa00;
+            flex-shrink:0;
+            margin-top:3px;
+        '></div>
+
+        <div>
+            <div style='font-size:14px;font-weight:bold;'>
+                Community 3
+                (3 nodes)
+            </div>
+
+            <div style='
+                font-size:12px;
+                color:#cbd5e1;
+                margin-top:2px;
+            '>
+                Pantser Writing Style, Plotter Writing Style, Writing Ending First
+            </div>
+        </div>
+
+    </div>
+    
+    <div style='display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;'>
+
+        <div style='
+            width:14px;
+            height:14px;
+            border-radius:50%;
+            background:#7f00ff;
+            flex-shrink:0;
+            margin-top:3px;
+        '></div>
+
+        <div>
+            <div style='font-size:14px;font-weight:bold;'>
+                Community 4
+                (2 nodes)
+            </div>
+
+            <div style='
+                font-size:12px;
+                color:#cbd5e1;
+                margin-top:2px;
+            '>
+                Chapter One, One One One Rule
+            </div>
+        </div>
+
+    </div>
+    
+    </details>
+</div>
+
+
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"category": "Author Experience", "color": {"background": "#00ffff", "border": "#ff007f", "highlight": {"background": "#00ffff", "border": "#ff007f"}}, "description": "The individual who wrote and self-published their first book, sharing their personal journey and unconventional writing methods.", "id": "author", "importance": 5, "importance_value": 5, "label": "Author", "shape": "dot", "size": 117.5, "source_reference": "I wrote a book and self-published it.", "title": "\u0027Author\u0027\n\n    Category: Author Experience\n    Importance: 5/5\n\n    The individual who wrote and self-published their first book, sharing their personal journey and unconventional writing methods.\n\n    Source:\n    I wrote a book and self-published it.\n\nCommunity Cluster: 1"}, {"category": "Book Project", "color": {"background": "#f43f5e", "border": "#14b8a6", "highlight": {"background": "#f43f5e", "border": "#14b8a6"}}, "description": "The first book written and published by the author, a science fiction novel titled \u0027Moon of Yesterday\u0027.", "id": "debut_novel", "importance": 5, "importance_value": 5, "label": "Debut Novel", "shape": "dot", "size": 65.0, "source_reference": "My debut novel came out to 66,000 words, so I absolutely can!", "title": "\u0027Debut Novel\u0027\n\n    Category: Book Project\n    Importance: 5/5\n\n    The first book written and published by the author, a science fiction novel titled \u0027Moon of Yesterday\u0027.\n\n    Source:\n    My debut novel came out to 66,000 words, so I absolutely can!\n\nCommunity Cluster: 2"}, {"category": "Publication", "color": {"background": "#f59e0b", "border": "#ff007f", "highlight": {"background": "#f59e0b", "border": "#ff007f"}}, "description": "The method chosen by the author to release their book, involving direct management of the publishing process.", "id": "self_publishing", "importance": 4, "importance_value": 4, "label": "Self-Publishing", "shape": "dot", "size": 44.5, "source_reference": "I wrote a book and self-published it.", "title": "\u0027Self-Publishing\u0027\n\n    Category: Publication\n    Importance: 4/5\n\n    The method chosen by the author to release their book, involving direct management of the publishing process.\n\n    Source:\n    I wrote a book and self-published it.\n\nCommunity Cluster: 1"}, {"category": "Publication", "color": {"background": "#f59e0b", "border": "#ff007f", "highlight": {"background": "#f59e0b", "border": "#ff007f"}}, "description": "The formal contract signed by the author for self-publishing their book, marking a significant milestone in the publication process.", "id": "publishing_agreement", "importance": 3, "importance_value": 3, "label": "Publishing Agreement", "shape": "dot", "size": 36.5, "source_reference": "I signed my self-publishing agreement on March 22, 2026.", "title": "\u0027Publishing Agreement\u0027\n\n    Category: Publication\n    Importance: 3/5\n\n    The formal contract signed by the author for self-publishing their book, marking a significant milestone in the publication process.\n\n    Source:\n    I signed my self-publishing agreement on March 22, 2026.\n\nCommunity Cluster: 1"}, {"category": "Mindset", "color": {"background": "#10b981", "border": "#ff007f", "highlight": {"background": "#10b981", "border": "#ff007f"}}, "description": "A state where ideas and writing come easily, which the author prioritizes over strict daily goals to ensure the quality and coherence of their story.", "id": "creative_flow", "importance": 4, "importance_value": 4, "label": "Creative Flow", "shape": "dot", "size": 47.0, "source_reference": "it doesn\u2019t allow the creative juices to flow.", "title": "\u0027Creative Flow\u0027\n\n    Category: Mindset\n    Importance: 4/5\n\n    A state where ideas and writing come easily, which the author prioritizes over strict daily goals to ensure the quality and coherence of their story.\n\n    Source:\n    it doesn\u2019t allow the creative juices to flow.\n\nCommunity Cluster: 1"}, {"category": "Mindset", "color": {"background": "#10b981", "border": "#ff007f", "highlight": {"background": "#10b981", "border": "#ff007f"}}, "description": "The sustained progress and drive in writing, which the author emphasizes as crucial, especially when writing more than expected.", "id": "momentum", "importance": 4, "importance_value": 4, "label": "Momentum", "shape": "dot", "size": 47.0, "source_reference": "You\u2019ll lose valuable momentum.", "title": "\u0027Momentum\u0027\n\n    Category: Mindset\n    Importance: 4/5\n\n    The sustained progress and drive in writing, which the author emphasizes as crucial, especially when writing more than expected.\n\n    Source:\n    You\u2019ll lose valuable momentum.\n\nCommunity Cluster: 1"}, {"category": "Goal Setting", "color": {"background": "#8b5cf6", "border": "#ff007f", "highlight": {"background": "#8b5cf6", "border": "#ff007f"}}, "description": "A common motivational tool in writing, which the author generally dislikes and finds demotivating, especially when self-imposed.", "id": "deadlines", "importance": 4, "importance_value": 4, "label": "Deadlines", "shape": "dot", "size": 47.0, "source_reference": "I\u2019d like to speak about deadlines as a person who feels demotivated by them.", "title": "\u0027Deadlines\u0027\n\n    Category: Goal Setting\n    Importance: 4/5\n\n    A common motivational tool in writing, which the author generally dislikes and finds demotivating, especially when self-imposed.\n\n    Source:\n    I\u2019d like to speak about deadlines as a person who feels demotivated by them.\n\nCommunity Cluster: 1"}, {"category": "Goal Setting", "color": {"background": "#8b5cf6", "border": "#14b8a6", "highlight": {"background": "#8b5cf6", "border": "#14b8a6"}}, "description": "A specific type of writing goal, such as 2,000 words per chapter, which the author found effective for structuring their novel and maintaining progress.", "id": "word_count_goals", "importance": 4, "importance_value": 4, "label": "Word Count Goals", "shape": "dot", "size": 47.0, "source_reference": "Word count goals are good! Adjust based on your genre and projected word count", "title": "\u0027Word Count Goals\u0027\n\n    Category: Goal Setting\n    Importance: 4/5\n\n    A specific type of writing goal, such as 2,000 words per chapter, which the author found effective for structuring their novel and maintaining progress.\n\n    Source:\n    Word count goals are good! Adjust based on your genre and projected word count\n\nCommunity Cluster: 2"}, {"category": "Mindset", "color": {"background": "#10b981", "border": "#ff007f", "highlight": {"background": "#10b981", "border": "#ff007f"}}, "description": "An adage encouraging writers to produce content, even if imperfect, rather than succumbing to writer\u0027s block or perfectionism.", "id": "bad_page_better_than_blank", "importance": 4, "importance_value": 4, "label": "Bad Page \u003e Blank Page", "shape": "dot", "size": 47.0, "source_reference": "A bad page is better than a blank page", "title": "\u0027Bad Page \u003e Blank Page\u0027\n\n    Category: Mindset\n    Importance: 4/5\n\n    An adage encouraging writers to produce content, even if imperfect, rather than succumbing to writer\u0027s block or perfectionism.\n\n    Source:\n    A bad page is better than a blank page\n\nCommunity Cluster: 1"}, {"category": "Writing Process", "color": {"background": "#5d9afb", "border": "#14b8a6", "highlight": {"background": "#5d9afb", "border": "#14b8a6"}}, "description": "The process of refining and correcting a manuscript, which the author found challenging but essential, advocating for a limited number of full edits.", "id": "editing", "importance": 4, "importance_value": 4, "label": "Editing", "shape": "dot", "size": 49.5, "source_reference": "Editing after the completion of my story", "title": "\u0027Editing\u0027\n\n    Category: Writing Process\n    Importance: 4/5\n\n    The process of refining and correcting a manuscript, which the author found challenging but essential, advocating for a limited number of full edits.\n\n    Source:\n    Editing after the completion of my story\n\nCommunity Cluster: 2"}, {"category": "Writing Technique", "color": {"background": "#ec4899", "border": "#ffaa00", "highlight": {"background": "#ec4899", "border": "#ffaa00"}}, "description": "A writing approach where the author writes spontaneously without a detailed outline, prioritizing creative discovery and organic character growth.", "id": "pantser_writing_style", "importance": 3, "importance_value": 3, "label": "Pantser Writing Style", "shape": "dot", "size": 44.0, "source_reference": "Pantsers (this is referring to the phrase \"fly by the seat of their pants\") write spontaneously without outlines, prioritizing creative discovery.", "title": "\u0027Pantser Writing Style\u0027\n\n    Category: Writing Technique\n    Importance: 3/5\n\n    A writing approach where the author writes spontaneously without a detailed outline, prioritizing creative discovery and organic character growth.\n\n    Source:\n    Pantsers (this is referring to the phrase \"fly by the seat of their pants\") write spontaneously without outlines, prioritizing creative discovery.\n\nCommunity Cluster: 3"}, {"category": "Writing Technique", "color": {"background": "#ec4899", "border": "#ffaa00", "highlight": {"background": "#ec4899", "border": "#ffaa00"}}, "description": "The author\u0027s personal strategy of deciding the ending of the story early on to provide a guiding \"hype point\" and cutoff, while still allowing for flexible writing.", "id": "writing_ending_first", "importance": 3, "importance_value": 3, "label": "Writing Ending First", "shape": "dot", "size": 41.5, "source_reference": "What worked for me was deciding the ending and moving forward with the freedom to write whatever as long as I find my path to that last chapter.", "title": "\u0027Writing Ending First\u0027\n\n    Category: Writing Technique\n    Importance: 3/5\n\n    The author\u0027s personal strategy of deciding the ending of the story early on to provide a guiding \"hype point\" and cutoff, while still allowing for flexible writing.\n\n    Source:\n    What worked for me was deciding the ending and moving forward with the freedom to write whatever as long as I find my path to that last chapter.\n\nCommunity Cluster: 3"}, {"category": "Challenge", "color": {"background": "#06b6d4", "border": "#ff007f", "highlight": {"background": "#06b6d4", "border": "#ff007f"}}, "description": "National November Writing Month, a yearly tradition of drafting a 50,000-word novel in 30 days, which the author found unsuitable for their creative process.", "id": "nanowrimo", "importance": 2, "importance_value": 2, "label": "NaNoWriMo", "shape": "dot", "size": 31.0, "source_reference": "NaNoWriMo (National November Writing Month \u2013 the yearly tradition of drafting a 50,000-word novel in 30 days every November) just wasn\u2019t for me.", "title": "\u0027NaNoWriMo\u0027\n\n    Category: Challenge\n    Importance: 2/5\n\n    National November Writing Month, a yearly tradition of drafting a 50,000-word novel in 30 days, which the author found unsuitable for their creative process.\n\n    Source:\n    NaNoWriMo (National November Writing Month \u2013 the yearly tradition of drafting a 50,000-word novel in 30 days every November) just wasn\u2019t for me.\n\nCommunity Cluster: 1"}, {"category": "Advice", "color": {"background": "#84cc16", "border": "#7f00ff", "highlight": {"background": "#84cc16", "border": "#7f00ff"}}, "description": "The author\u0027s advice to write the entire first chapter in one sitting, within one week of the story idea, especially when the idea is fresh.", "id": "one_one_one_rule", "importance": 3, "importance_value": 3, "label": "1-1-1 Rule", "shape": "dot", "size": 39.0, "source_reference": "Write the entire chapter one, in one sitting, within one week of the story idea (I\u2019m naming it the 1-1-1 rule! It rolls off the tongue!).", "title": "\u00271-1-1 Rule\u0027\n\n    Category: Advice\n    Importance: 3/5\n\n    The author\u0027s advice to write the entire first chapter in one sitting, within one week of the story idea, especially when the idea is fresh.\n\n    Source:\n    Write the entire chapter one, in one sitting, within one week of the story idea (I\u2019m naming it the 1-1-1 rule! It rolls off the tongue!).\n\nCommunity Cluster: 4"}, {"category": "Writing Process", "color": {"background": "#5d9afb", "border": "#7f00ff", "highlight": {"background": "#5d9afb", "border": "#7f00ff"}}, "description": "The initial chapter of a novel, considered by the author as the most difficult but crucial for establishing groundwork and an anchor point for the story.", "id": "chapter_one", "importance": 4, "importance_value": 4, "label": "Chapter One", "shape": "dot", "size": 49.5, "source_reference": "Writing the first chapter is the most difficult, no matter how detailed the story is in your mind.", "title": "\u0027Chapter One\u0027\n\n    Category: Writing Process\n    Importance: 4/5\n\n    The initial chapter of a novel, considered by the author as the most difficult but crucial for establishing groundwork and an anchor point for the story.\n\n    Source:\n    Writing the first chapter is the most difficult, no matter how detailed the story is in your mind.\n\nCommunity Cluster: 4"}, {"category": "Goal Setting", "color": {"background": "#8b5cf6", "border": "#ff007f", "highlight": {"background": "#8b5cf6", "border": "#ff007f"}}, "description": "The practice of setting and adhering to daily targets for writing, which the author explicitly states is not suitable for their creative process.", "id": "daily_writing_goals", "importance": 3, "importance_value": 3, "label": "Daily Writing Goals", "shape": "dot", "size": 39.0, "source_reference": "A personal dislike against daily word goals", "title": "\u0027Daily Writing Goals\u0027\n\n    Category: Goal Setting\n    Importance: 3/5\n\n    The practice of setting and adhering to daily targets for writing, which the author explicitly states is not suitable for their creative process.\n\n    Source:\n    A personal dislike against daily word goals\n\nCommunity Cluster: 1"}, {"category": "Book Project", "color": {"background": "#f43f5e", "border": "#14b8a6", "highlight": {"background": "#f43f5e", "border": "#14b8a6"}}, "description": "The specific title of the author\u0027s debut science fiction novel, which explores themes of memory, grief, time, and reality.", "id": "moon_of_yesterday", "importance": 5, "importance_value": 5, "label": "Moon of Yesterday", "shape": "dot", "size": 55.0, "source_reference": "\u2018Moon of Yesterday\u2019 Is the Name of My Debut Sci-Fi Book by The Way!", "title": "\u0027Moon of Yesterday\u0027\n\n    Category: Book Project\n    Importance: 5/5\n\n    The specific title of the author\u0027s debut science fiction novel, which explores themes of memory, grief, time, and reality.\n\n    Source:\n    \u2018Moon of Yesterday\u2019 Is the Name of My Debut Sci-Fi Book by The Way!\n\nCommunity Cluster: 2"}, {"category": "Goal Setting", "color": {"background": "#8b5cf6", "border": "#ff007f", "highlight": {"background": "#8b5cf6", "border": "#ff007f"}}, "description": "Specific, short-term writing goals like fixed word counts or time limits, which the author found counterproductive for their process.", "id": "smaller_deadlines", "importance": 3, "importance_value": 3, "label": "Smaller Deadlines", "shape": "dot", "size": 36.5, "source_reference": "Smaller deadlines are good! But make it too small and\u2026 yeah, suddenly progress is non-existent", "title": "\u0027Smaller Deadlines\u0027\n\n    Category: Goal Setting\n    Importance: 3/5\n\n    Specific, short-term writing goals like fixed word counts or time limits, which the author found counterproductive for their process.\n\n    Source:\n    Smaller deadlines are good! But make it too small and\u2026 yeah, suddenly progress is non-existent\n\nCommunity Cluster: 1"}, {"category": "Writing Technique", "color": {"background": "#ec4899", "border": "#ffaa00", "highlight": {"background": "#ec4899", "border": "#ffaa00"}}, "description": "A writing approach where the author outlines and structures their story extensively before writing, ensuring flow and logic.", "id": "plotter_writing_style", "importance": 2, "importance_value": 2, "label": "Plotter Writing Style", "shape": "dot", "size": 28.5, "source_reference": "Plotters, self-explanatory, outline and structure their story before writing to ensure flow and logic.", "title": "\u0027Plotter Writing Style\u0027\n\n    Category: Writing Technique\n    Importance: 2/5\n\n    A writing approach where the author outlines and structures their story extensively before writing, ensuring flow and logic.\n\n    Source:\n    Plotters, self-explanatory, outline and structure their story before writing to ensure flow and logic.\n\nCommunity Cluster: 3"}, {"category": "Challenge", "color": {"background": "#06b6d4", "border": "#ff007f", "highlight": {"background": "#06b6d4", "border": "#ff007f"}}, "description": "External feedback on writing, which the author found difficult to receive, particularly regarding their personal writing style.", "id": "criticism", "importance": 3, "importance_value": 3, "label": "Criticism", "shape": "dot", "size": 36.5, "source_reference": "I received some comments that attacked my writing style.", "title": "\u0027Criticism\u0027\n\n    Category: Challenge\n    Importance: 3/5\n\n    External feedback on writing, which the author found difficult to receive, particularly regarding their personal writing style.\n\n    Source:\n    I received some comments that attacked my writing style.\n\nCommunity Cluster: 1"}, {"category": "Author Experience", "color": {"background": "#00ffff", "border": "#ff007f", "highlight": {"background": "#00ffff", "border": "#ff007f"}}, "description": "The author\u0027s responsibilities as a final year engineering student, which influenced their writing schedule and process.", "id": "academic_commitments", "importance": 2, "importance_value": 2, "label": "Academic Commitments", "shape": "dot", "size": 28.5, "source_reference": "mainly late at night due to my academic commitments", "title": "\u0027Academic Commitments\u0027\n\n    Category: Author Experience\n    Importance: 2/5\n\n    The author\u0027s responsibilities as a final year engineering student, which influenced their writing schedule and process.\n\n    Source:\n    mainly late at night due to my academic commitments\n\nCommunity Cluster: 1"}]);
+                  edges = new vis.DataSet([{"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 1.0}, "from": "author", "label": "writes", "smooth": {"type": "dynamic"}, "title": "\u0027author \u2794 debut_novel\u0027\n\n        Semantic: writes\n\n        Confidence: 100.0%", "to": "debut_novel", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 1.0}, "from": "author", "label": "uses", "smooth": {"type": "dynamic"}, "title": "\u0027author \u2794 self_publishing\u0027\n\n        Semantic: uses\n\n        Confidence: 100.0%", "to": "self_publishing", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 1.0}, "from": "author", "label": "signs", "smooth": {"type": "dynamic"}, "title": "\u0027author \u2794 publishing_agreement\u0027\n\n        Semantic: signs\n\n        Confidence: 100.0%", "to": "publishing_agreement", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.9}, "from": "author", "label": "prioritizes", "smooth": {"type": "dynamic"}, "title": "\u0027author \u2794 creative_flow\u0027\n\n        Semantic: prioritizes\n\n        Confidence: 90.0%", "to": "creative_flow", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.9}, "from": "author", "label": "values", "smooth": {"type": "dynamic"}, "title": "\u0027author \u2794 momentum\u0027\n\n        Semantic: values\n\n        Confidence: 90.0%", "to": "momentum", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.9}, "from": "author", "label": "dislikes", "smooth": {"type": "dynamic"}, "title": "\u0027author \u2794 deadlines\u0027\n\n        Semantic: dislikes\n\n        Confidence: 90.0%", "to": "deadlines", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.9}, "from": "author", "label": "adopts", "smooth": {"type": "dynamic"}, "title": "\u0027author \u2794 word_count_goals\u0027\n\n        Semantic: adopts\n\n        Confidence: 90.0%", "to": "word_count_goals", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.9}, "from": "author", "label": "applies", "smooth": {"type": "dynamic"}, "title": "\u0027author \u2794 bad_page_better_than_blank\u0027\n\n        Semantic: applies\n\n        Confidence: 90.0%", "to": "bad_page_better_than_blank", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 1.0}, "from": "author", "label": "performs", "smooth": {"type": "dynamic"}, "title": "\u0027author \u2794 editing\u0027\n\n        Semantic: performs\n\n        Confidence: 100.0%", "to": "editing", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.9}, "from": "author", "label": "identifies_as", "smooth": {"type": "dynamic"}, "title": "\u0027author \u2794 pantser_writing_style\u0027\n\n        Semantic: identifies_as\n\n        Confidence: 90.0%", "to": "pantser_writing_style", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.9}, "from": "author", "label": "develops", "smooth": {"type": "dynamic"}, "title": "\u0027author \u2794 writing_ending_first\u0027\n\n        Semantic: develops\n\n        Confidence: 90.0%", "to": "writing_ending_first", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.9}, "from": "author", "label": "rejects", "smooth": {"type": "dynamic"}, "title": "\u0027author \u2794 nanowrimo\u0027\n\n        Semantic: rejects\n\n        Confidence: 90.0%", "to": "nanowrimo", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.9}, "from": "author", "label": "proposes", "smooth": {"type": "dynamic"}, "title": "\u0027author \u2794 one_one_one_rule\u0027\n\n        Semantic: proposes\n\n        Confidence: 90.0%", "to": "one_one_one_rule", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.9}, "from": "author", "label": "emphasizes_importance_of", "smooth": {"type": "dynamic"}, "title": "\u0027author \u2794 chapter_one\u0027\n\n        Semantic: emphasizes_importance_of\n\n        Confidence: 90.0%", "to": "chapter_one", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.9}, "from": "author", "label": "avoids", "smooth": {"type": "dynamic"}, "title": "\u0027author \u2794 daily_writing_goals\u0027\n\n        Semantic: avoids\n\n        Confidence: 90.0%", "to": "daily_writing_goals", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 1.0}, "from": "author", "label": "authors", "smooth": {"type": "dynamic"}, "title": "\u0027author \u2794 moon_of_yesterday\u0027\n\n        Semantic: authors\n\n        Confidence: 100.0%", "to": "moon_of_yesterday", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 1.0}, "from": "debut_novel", "label": "is_titled", "smooth": {"type": "dynamic"}, "title": "\u0027debut_novel \u2794 moon_of_yesterday\u0027\n\n        Semantic: is_titled\n\n        Confidence: 100.0%", "to": "moon_of_yesterday", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.9}, "from": "deadlines", "label": "demotivates", "smooth": {"type": "dynamic"}, "title": "\u0027deadlines \u2794 author\u0027\n\n        Semantic: demotivates\n\n        Confidence: 90.0%", "to": "author", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.8}, "from": "smaller_deadlines", "label": "slows_down", "smooth": {"type": "dynamic"}, "title": "\u0027smaller_deadlines \u2794 author\u0027\n\n        Semantic: slows_down\n\n        Confidence: 80.0%", "to": "author", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.9}, "from": "word_count_goals", "label": "structures", "smooth": {"type": "dynamic"}, "title": "\u0027word_count_goals \u2794 debut_novel\u0027\n\n        Semantic: structures\n\n        Confidence: 90.0%", "to": "debut_novel", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.9}, "from": "bad_page_better_than_blank", "label": "encourages", "smooth": {"type": "dynamic"}, "title": "\u0027bad_page_better_than_blank \u2794 author\u0027\n\n        Semantic: encourages\n\n        Confidence: 90.0%", "to": "author", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 1.0}, "from": "editing", "label": "improves", "smooth": {"type": "dynamic"}, "title": "\u0027editing \u2794 debut_novel\u0027\n\n        Semantic: improves\n\n        Confidence: 100.0%", "to": "debut_novel", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.8}, "from": "editing", "label": "is_challenging_for", "smooth": {"type": "dynamic"}, "title": "\u0027editing \u2794 author\u0027\n\n        Semantic: is_challenging_for\n\n        Confidence: 80.0%", "to": "author", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.9}, "from": "pantser_writing_style", "label": "describes", "smooth": {"type": "dynamic"}, "title": "\u0027pantser_writing_style \u2794 author\u0027\n\n        Semantic: describes\n\n        Confidence: 90.0%", "to": "author", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.9}, "from": "pantser_writing_style", "label": "contrasts_with", "smooth": {"type": "dynamic"}, "title": "\u0027pantser_writing_style \u2794 plotter_writing_style\u0027\n\n        Semantic: contrasts_with\n\n        Confidence: 90.0%", "to": "plotter_writing_style", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.8}, "from": "writing_ending_first", "label": "modifies", "smooth": {"type": "dynamic"}, "title": "\u0027writing_ending_first \u2794 pantser_writing_style\u0027\n\n        Semantic: modifies\n\n        Confidence: 80.0%", "to": "pantser_writing_style", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.8}, "from": "writing_ending_first", "label": "provides_direction_for", "smooth": {"type": "dynamic"}, "title": "\u0027writing_ending_first \u2794 debut_novel\u0027\n\n        Semantic: provides_direction_for\n\n        Confidence: 80.0%", "to": "debut_novel", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.8}, "from": "nanowrimo", "label": "challenges", "smooth": {"type": "dynamic"}, "title": "\u0027nanowrimo \u2794 author\u0027\n\n        Semantic: challenges\n\n        Confidence: 80.0%", "to": "author", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.9}, "from": "one_one_one_rule", "label": "advises_starting", "smooth": {"type": "dynamic"}, "title": "\u0027one_one_one_rule \u2794 chapter_one\u0027\n\n        Semantic: advises_starting\n\n        Confidence: 90.0%", "to": "chapter_one", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.9}, "from": "chapter_one", "label": "provides_groundwork_for", "smooth": {"type": "dynamic"}, "title": "\u0027chapter_one \u2794 debut_novel\u0027\n\n        Semantic: provides_groundwork_for\n\n        Confidence: 90.0%", "to": "debut_novel", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.9}, "from": "creative_flow", "label": "enables_writing", "smooth": {"type": "dynamic"}, "title": "\u0027creative_flow \u2794 author\u0027\n\n        Semantic: enables_writing\n\n        Confidence: 90.0%", "to": "author", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.9}, "from": "momentum", "label": "sustains_writing", "smooth": {"type": "dynamic"}, "title": "\u0027momentum \u2794 author\u0027\n\n        Semantic: sustains_writing\n\n        Confidence: 90.0%", "to": "author", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.8}, "from": "criticism", "label": "affects", "smooth": {"type": "dynamic"}, "title": "\u0027criticism \u2794 author\u0027\n\n        Semantic: affects\n\n        Confidence: 80.0%", "to": "author", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.9}, "from": "daily_writing_goals", "label": "is_unsuitable_for", "smooth": {"type": "dynamic"}, "title": "\u0027daily_writing_goals \u2794 author\u0027\n\n        Semantic: is_unsuitable_for\n\n        Confidence: 90.0%", "to": "author", "width": 1}, {"arrows": "to", "color": {"color": "#64748b", "highlight": "#38bdf8", "opacity": 0.8}, "from": "academic_commitments", "label": "influences_schedule_of", "smooth": {"type": "dynamic"}, "title": "\u0027academic_commitments \u2794 author\u0027\n\n        Semantic: influences_schedule_of\n\n        Confidence: 80.0%", "to": "author", "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"interaction": {"hover": true, "selectConnectedEdges": true, "multiselect": false, "dragNodes": true}, "edges": {"arrows": {"to": {"enabled": true, "scaleFactor": 0.5}}, "font": {"size": 11, "align": "horizontal", "strokeWidth": 2, "strokeColor": "#ffffff"}}, "nodes": {"shape": "dot", "borderWidth": 2, "font": {"size": 13, "face": "monospace", "background": "rgba(255,255,255,0.7)"}}, "physics": {"barnesHut": {"gravitationalConstant": -12000, "centralGravity": 0.1, "springLength": 240, "springConstant": 0.04, "damping": 0.09}, "minVelocity": 0.75, "stabilization": {"enabled": true, "iterations": 150}}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
