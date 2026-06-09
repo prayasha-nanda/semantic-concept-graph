@@ -2,14 +2,15 @@
 
 Transform unstructured text into an interactive semantic knowledge graph powered by Gemini, NetworkX, and PyVis.
 
-![Python](https://img.shields.io/badge/python-3.12%2B-blue?style=for-the-badge&logo=python&logoColor=white)
-![Gemini](https://img.shields.io/badge/Gemini%20AI-2.5%20Flash-orange?style=for-the-badge&logo=google&logoColor=white)
-![NetworkX](https://img.shields.io/badge/NetworkX-Graph%20Engine-green?style=for-the-badge)
-![PyVis](https://img.shields.io/badge/PyVis-Interactive%20Visualization-teal?style=for-the-badge)
-![Pydantic](https://img.shields.io/badge/Pydantic-Validation-red?style=for-the-badge)
-![License](https://img.shields.io/badge/license-MIT-purple?style=for-the-badge)
+<p align="center">
+  <img src="https://img.shields.io/badge/python-3.12%2B-blue?style=flat&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Gemini%20AI-2.5%20Flash-orange?style=flat&logo=google&logoColor=white" alt="Gemini">
+  <img src="https://img.shields.io/badge/NetworkX-Graph%20Engine-green?style=flat" alt="NetworkX">
+  <img src="https://img.shields.io/badge/PyVis-Interactive%20Visualization-teal?style=flat" alt="PyVis">
+  <img src="https://img.shields.io/badge/Pydantic-Validation-red?style=flat" alt="Pydantic">
+  <img src="https://img.shields.io/badge/license-MIT-purple?style=flat" alt="License">
+</p>
 
-> Turn articles, stories, research papers, and design documents into interactive knowledge graphs.
 
 Ever tried reading a massive block of text and wished you could just *see* how all the ideas, themes, and characters smash into each other?
 
