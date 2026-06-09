@@ -129,7 +129,7 @@ Interactive HTML Graph
 ```text
 semantic-concept-graph/
 │
-├── cache/                  # Token-saving local JSON cache
+├── cache/                  # Local JSON cache
 │   └── *.json
 │
 ├── samples/                # Repository documentation assets
