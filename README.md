@@ -1,13 +1,13 @@
 # Semantic Concept Graph Generator
 
-Transform unstructured text into an interactive semantic knowledge graph powered by Gemini, NetworkX, and PyVis.
-
 <p align="center">
   <img src="https://img.shields.io/badge/python-3.12%2B-blue?style=flat&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Gemini%20AI-2.5%20Flash-orange?style=flat&logo=google&logoColor=white" alt="Gemini">
   <img src="https://img.shields.io/badge/NetworkX-Graph%20Engine-green?style=flat" alt="NetworkX">
   <img src="https://img.shields.io/badge/PyVis-Interactive%20Visualization-teal?style=flat" alt="PyVis">
   <img src="https://img.shields.io/badge/Pydantic-Validation-red?style=flat" alt="Pydantic">
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Gemini%20AI-2.5%20Flash-orange?style=flat&logo=google&logoColor=white" alt="Gemini">
   <img src="https://img.shields.io/badge/license-MIT-purple?style=flat" alt="License">
 </p>
 
