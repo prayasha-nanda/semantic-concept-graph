@@ -72,7 +72,7 @@ except FileNotFoundError:
         f.write(sample_text)
     article = sample_text
 
-MAX_INPUT_CHARS = 17000 # Adjust as required
+MAX_INPUT_CHARS = 15000 # Adjust as required
 
 if len(article) > MAX_INPUT_CHARS:
     print(f"Input text exceeds {MAX_INPUT_CHARS} characters.")
@@ -146,7 +146,17 @@ if validated_map is None:
         print("\n=== RAW EXTRACTED LLM RESPONSE IN CACHE FILE===\n")
         # To Log response body, uncomment
         # print(response.text)
-        
+
+        if not response.text or not response.text.strip():
+            raise RuntimeError(
+                "Gemini returned an empty response.\n"
+                "Possible causes:\n"
+                "- Safety filtering\n"
+                "- API quota exceeded\n"
+                "- Network issue\n"
+                "- Service interruption"
+            )
+
         raw_data = json.loads(response.text)
         with open(CACHE_FILE, "w", encoding="utf-8") as cache_file:
             json.dump(raw_data, cache_file, indent=2)
@@ -457,13 +467,7 @@ legend_html = """
     margin:12px;
 '>
     <h3 style='margin-top:0;'>Categories</h3>
-
-    <div style='
-        display:grid;
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-        gap:10px;
-        max-width:900px;
-    '>
+    <div style='display:flex;flex-wrap:wrap;gap:16px;'>
 """
 
 for category, color in CATEGORY_COLORS.items():
@@ -543,12 +547,103 @@ legend_html += """
 </div>
 """
 
+controls_html = """
+<div id='controls-box' style='
+    position:fixed;
+    top:20px;
+    right:20px;
+    z-index:9999;
+    background:rgba(255,253,245,0.85);
+    color:#7c2d12;
+    border:1px solid rgba(180,83,9,0.2);
+    #color:white;
+    padding:12px 16px;
+    border-radius:12px;
+'>
+<div class="tape"></div>
+    <div style='display:flex;justify-content:space-between;gap:12px;'>
+
+        <strong>Controls :D</strong>
+
+        <span
+            onclick="document.getElementById('controls-box').remove()"
+            style='cursor:pointer;'
+        >
+            ✕
+        </span>
+
+    </div>
+
+    <div style='margin-top:6px;'>- Drag nodes</div>
+    <div>- Zoom with mouse</div>
+    <div>- Hover for details</div>
+    <div>- Click to select</div>
+</div>
+"""
+
 with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
     html = f.read()
 
 html = html.replace(
+    "</head>",
+    """
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+
+    <style>
+
+    .tape {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-4deg);
+
+    width: 60px;
+    height: 20px;
+
+    background: rgba(255,248,220,0.7);
+
+    border-left: 1px dashed rgba(0,0,0,0.08);
+    border-right: 1px dashed rgba(0,0,0,0.08);
+
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+        #controls-box {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 16px;
+            opacity: 0.35;
+            transition: opacity 0.2s ease;
+        }
+
+        #controls-box:hover {
+            opacity: 1;
+        }
+
+        #mynetwork {
+            background-color: #fffdf5;
+
+            background-image:
+                linear-gradient(
+                    rgba(180,83,9,0.08) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(180,83,9,0.08) 1px,
+                    transparent 1px
+                );
+
+            background-size: 28px 28px;
+        }
+    </style>
+
+    </head>
+    """,
+    1
+)
+
+html = html.replace(
     "<body>",
-    f"<body>\n{legend_html}\n", 1
+    f"<body>\n{controls_html}\n{legend_html}\n", 1
 )
 
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:

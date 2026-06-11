@@ -1,8 +1,7 @@
 # Semantic Concept Graph Generator
 
-
-
 Ever tried reading a massive block of text and wished you could just *see* how all the ideas, themes, and characters smash into each other?
+(Literally smash into each other.)
 
 This tool takes raw, unstructured text and uses **Gemini 2.5 Flash** to extract semantic concepts (meaningful entities, themes, emotions, concepts, and relationships from natural language text), validates them with **Pydantic**, crunches the mathematical clusters using **NetworkX**, and spins up an interactive network graph courtesy of **PyVis** (that you can play with thanks to the physics setting!).
 
@@ -18,6 +17,7 @@ This tool takes raw, unstructured text and uses **Gemini 2.5 Flash** to extract 
 </p>
 
 ---
+
 ## Quick TL;DR - What It Does
 
 1. Reads raw text
@@ -27,12 +27,36 @@ This tool takes raw, unstructured text and uses **Gemini 2.5 Flash** to extract 
 5. Generates an interactive visualization
 
 Input:
-Article, novel chapter, research paper, design document, etc. (Save as sample.txt)
+Article, chapters, research paper, design document, etc. (Save as `sample.txt` in main directory, adjust `MAX_INPUT_CHARS` in `main.py` as per your input - just be aware of the number of tokens you are using!)
 
 Output:
 Interactive semantic concept graph + static Matplotlib rendering of the same graph
 
 ---
+
+## Small Preview + Small Talk
+![Sample Graph Screenshot](samples/sample_graph_screenshot.png)
+You can zoom, drag nodes around, and explore the graph!
+
+I tried hard to make it very plain, so that it's not distracting, but also visually a bit interesting so that it's not boring!
+I thought to remove the hovering text since it was getting long (and perhaps a bit distracting?) and have it in a separate panel, but doing so was once again feeding information which was losing the main goal of this project: to the point summarization.
+
+This little note on the top as my courtesy!!
+![Little Note Upon Hovering](samples/little_note.png)
+
+The static graph struggles with many relationships and connections, which you can see here, but it is still very helpful if you just want to get to the point! Sometimes the interactive graph may feel like it gives too much information.
+
+![Sample Static Graph](samples/sample_static_blueprint.png)
+
+Ultimately, what matters is the condensation of information, one line summaries with their sources in the tooltip (the box that comes when you hover over a node or an edge), and the direction and connection between different pieces of information.
+
+Also, the code filters out isolated nodes (points with no connection at all) - hopefully, no fun part (or serious part) gets skipped!
+
+You are welcome to fine-tune this based on your requirements (keep isolated nodes, increase or decrease minimum required confidence for condensation or expansion of the graph, change the AI architecture from Google's Gemini to OpenAI's ChatGPT, tweak the prompt, among others).
+
+P.S. I have added guardrails & fallbacks wherever possible. Check terminal for logs. Whatever you can't find on the screen is probably printed in here!
+
+![Example Terminal Log](samples/terminal_log.png)
 
 ## Features
 
@@ -46,7 +70,7 @@ Uses Gemini 2.5 Flash to identify nodes like:
 * Technologies
 * Emotions
 * Settings
-* and so on...
+* and so on!
 
 Each extracted node includes:
 
@@ -69,8 +93,6 @@ NetworkX's modularity-based clustering algorithm groups related concepts into se
 
 Community membership is visualized through node border colors.
 
----
-
 ### Interactive Visualization
 
 Built using PyVis.
@@ -84,13 +106,6 @@ You can look at my sample outputs for this [article](https://medium.com/@prayash
 * `sample_graph.html`
 * `sample_static_blueprint.png`
 
-### Small Preview
-![Sample Graph Screenshot](samples/sample_graph_screenshot.png)
-You can zoom, drag nodes around, and explore the graph!
-
-The static graph struggles with many relationships and connections, which you can see here, but it is still very helpful if you just want to get to the point! Sometimes the interactive graph may feel like it gives too much information.
-
-![Sample Static Graph](samples/sample_static_blueprint.png)
 
 ---
 
@@ -134,6 +149,7 @@ semantic-concept-graph/
 │   └── *.json
 │
 ├── samples/                # Repository documentation assets
+│   ├── little_note.png
 │   ├── sample_graph_screenshot.png
 │   ├── sample_graph.html
 │   └── sample_static_blueprint.png
@@ -202,7 +218,7 @@ GEMINI_API_KEY=your_api_key_here
 
 ## Usage
 
-Place the text you want to analyze inside sample.txt.
+Place the text you want to analyze inside `sample.txt`.
 
 Then run:
 
@@ -227,10 +243,7 @@ To reduce API usage and speed up experimentation, extraction results are cached 
 
 Cache files are stored in cache/
 
-The cache key is generated using the MD5 hash of:
-
-* Input text
-* Prompt configuration
+The cache key is generated using the MD5 hash of **input text + prompt configuration**.
 
 This ensures that changing extraction instructions automatically invalidates old cache results.
 
@@ -284,6 +297,7 @@ Larger nodes generally represent more influential concepts.
 * Graph search and filtering
 * Custom clustering strategies
 * Perhaps a "talk to your graph" type bot?
+* And maybe a UI update
 
 ---
 
