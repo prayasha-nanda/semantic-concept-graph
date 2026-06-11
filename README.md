@@ -3,6 +3,8 @@
 Ever tried reading a massive block of text and wished you could just *see* how all the ideas, themes, and characters smash into each other?
 (Literally smash into each other.)
 
+> This README is admittedly long. Fortunately, this project was built to solve exactly that problem.
+
 This tool takes raw, unstructured text and uses **Gemini 2.5 Flash** to extract semantic concepts (meaningful entities, themes, emotions, concepts, and relationships from natural language text), validates them with **Pydantic**, crunches the mathematical clusters using **NetworkX**, and spins up an interactive network graph courtesy of **PyVis** (that you can play with thanks to the physics setting!).
 
 <p align="center">
@@ -253,7 +255,7 @@ Place the text you want to analyze inside `sample.txt`.
 Then run:
 
 ```bash
-py main.py
+python main.py
 ```
 
 Generated outputs:
