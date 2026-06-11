@@ -35,13 +35,13 @@ Interactive semantic concept graph + static Matplotlib rendering of the same gra
 Something like this:
 <table align="center">
 <tr>
-<td width="65%">
+<td width="60%" align="center">
 <img src="samples/sample_graph_screenshot.png" width="100%">
 <br>
 <b>Interactive Graph</b>
 </td>
 
-<td width="35%">
+<td width="40%" align="center">
 <img src="samples/sample_static_blueprint.png" width="100%">
 <br>
 <b>Static Blueprint</b>
