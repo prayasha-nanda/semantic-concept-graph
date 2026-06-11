@@ -32,6 +32,23 @@ Article, chapters, research paper, design document, etc. (Save as `sample.txt` i
 Output:
 Interactive semantic concept graph + static Matplotlib rendering of the same graph
 
+Something like this:
+<table align="center">
+<tr>
+<td align="center">
+<img src="samples/sample_graph_screenshot.png" width="100%">
+<br>
+<b>Interactive Graph</b>
+</td>
+
+<td align="center">
+<img src="samples/sample_static_blueprint.png" width="100%">
+<br>
+<b>Static Blueprint</b>
+</td>
+</tr>
+</table>
+
 ---
 
 ## Features
@@ -39,6 +56,7 @@ Interactive semantic concept graph + static Matplotlib rendering of the same gra
 ### Semantic Extraction
 
 Uses Gemini 2.5 Flash to identify nodes like characters, themes, events, technologies, settings and so on.
+'Semantic' bascially means the literal, intended interpretation of words. Like the word 'bank' has several semantics: river bank or financial bank, you see. So, we want to find out what exactly the text is talking about - what is the semantic meaning of the words or the semantic relationship between words.
 
 Each extracted node includes:
 
@@ -48,15 +66,26 @@ Each extracted node includes:
 * Importance score
 * Source reference
 
+Have a look:
+![Sample Tooltip of a Node Example](samples/sample_tooltip_of_node.png)
+
 Then the system identifies semantic relationships between concepts and assigns a relationship type and a confidence score.
+
+![Sample Tooltip of an Edge Example](samples/sample_tooltip_of_edge.png)
 
 Low-confidence edges are automatically filtered to improve graph quality (minimum confidence of `0.55` required!).
 
+(Yes, I'm demotivated by deadlines... Yes, Gemini is 90% confident.)
+
 ### Community Detection
 
-NetworkX's modularity-based clustering algorithm groups related concepts into semantic communities (clusters).
+NetworkX's modularity-based clustering algorithm groups related concepts into semantic communities (clusters). Community membership can be seen by the node border colors. These communities are mentioned under the collapsable section 'Detected Semantic Communities'.
 
-Community membership is visualized through node border colors.
+This information, for most part, isn't very useful when you're trying to read something quickly. But it's nice to have, helps with visual correlations, and connects related concepts.
+
+![Sample Semantic Communities](samples/sample_semantic_communities.png)
+
+You see? Community 1 relates to writing in general, community 2 relates to my novel, community 3 relates to writing advice and styles, community 4 relates to... '1', haha. In my article I mention how the first week / first book / first idea and such are connected, so this wonderful digit has got its own nodes and community!
 
 ### Interactive Visualization
 
@@ -102,7 +131,7 @@ You are welcome to fine-tune this based on your requirements (keep isolated node
 
 P.S. I have added guardrails & fallbacks wherever possible. Check terminal for logs. Whatever you can't find on the screen is probably printed in here!
 
-![Example Terminal Log](samples/terminal_log.png)
+![Example Terminal Log](samples/sample_terminal_log.png)
 
 ---
 
@@ -149,7 +178,11 @@ semantic-concept-graph/
 │   ├── little_note.png
 │   ├── sample_graph_screenshot.png
 │   ├── sample_graph.html
+│   └── sample_semantic_communities.png
 │   └── sample_static_blueprint.png
+│   └── sample_terminal_log.png
+│   └── sample_tooltip_of_edge.png
+│   └── sample_tooltip_of_node.png
 │
 ├── sample.txt              # Feed your raw text data here!
 ├── main.py                 # The system core execution loop
@@ -284,6 +317,7 @@ Larger nodes generally represent more influential concepts.
 - Research Papers
 - Software Documentation
 - Knowledge Mapping
+- Visual Learning Use Cases
 
 ---
 
