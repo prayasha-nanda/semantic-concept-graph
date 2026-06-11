@@ -34,43 +34,11 @@ Interactive semantic concept graph + static Matplotlib rendering of the same gra
 
 ---
 
-## Small Preview + Small Talk
-![Sample Graph Screenshot](samples/sample_graph_screenshot.png)
-You can zoom, drag nodes around, and explore the graph!
-
-I tried hard to make it very plain, so that it's not distracting, but also visually a bit interesting so that it's not boring!
-I thought to remove the hovering text since it was getting long (and perhaps a bit distracting?) and have it in a separate panel, but doing so was once again feeding information which was losing the main goal of this project: to the point summarization.
-
-This little note on the top as my courtesy!!
-![Little Note Upon Hovering](samples/little_note.png)
-
-The static graph struggles with many relationships and connections, which you can see here, but it is still very helpful if you just want to get to the point! Sometimes the interactive graph may feel like it gives too much information.
-
-![Sample Static Graph](samples/sample_static_blueprint.png)
-
-Ultimately, what matters is the condensation of information, one line summaries with their sources in the tooltip (the box that comes when you hover over a node or an edge), and the direction and connection between different pieces of information.
-
-Also, the code filters out isolated nodes (points with no connection at all) - hopefully, no fun part (or serious part) gets skipped!
-
-You are welcome to fine-tune this based on your requirements (keep isolated nodes, increase or decrease minimum required confidence for condensation or expansion of the graph, change the AI architecture from Google's Gemini to OpenAI's ChatGPT, tweak the prompt, among others).
-
-P.S. I have added guardrails & fallbacks wherever possible. Check terminal for logs. Whatever you can't find on the screen is probably printed in here!
-
-![Example Terminal Log](samples/terminal_log.png)
-
 ## Features
 
 ### Semantic Extraction
 
-Uses Gemini 2.5 Flash to identify nodes like:
-
-* Characters
-* Themes
-* Events
-* Technologies
-* Emotions
-* Settings
-* and so on!
+Uses Gemini 2.5 Flash to identify nodes like characters, themes, events, technologies, settings and so on.
 
 Each extracted node includes:
 
@@ -80,10 +48,7 @@ Each extracted node includes:
 * Importance score
 * Source reference
 
-Then the system identifies semantic relationships between concepts and assigns:
-
-* Relationship type
-* Confidence score
+Then the system identifies semantic relationships between concepts and assigns a relationship type and a confidence score.
 
 Low-confidence edges are automatically filtered to improve graph quality (minimum confidence of `0.55` required!).
 
@@ -106,6 +71,38 @@ You can look at my sample outputs for this [article](https://medium.com/@prayash
 * `sample_graph.html`
 * `sample_static_blueprint.png`
 
+---
+
+## Small Preview + Small Talk
+
+This is the main output, a colorful concept graph with the information in a visual format with a lot of interactive elements built into it. It's a HTML file made primarily for larger screens (desktops, laptops, etc.).
+
+![Sample Graph Screenshot](samples/sample_graph_screenshot.png)
+
+You can zoom, drag nodes around, and explore the graph! Try downloading `samples/sample_graph.html` to get a feel.
+
+For visual learners who struggle to take in large amounts of plain text, this is for you! You can also use transcripts as your sample; now, isn't that helpful?
+
+I tried hard to make it very plain, so that it's not distracting, but also visually interesting so that it's not boring!
+I thought to remove the hovering text since it was getting long (and perhaps a bit distracting?) and have it in a separate panel, but doing so was once again feeding information which was losing the main goal of this project: to the point summarization.
+
+This little note on the top as my courtesy!!
+
+![Little Note Upon Hovering](samples/little_note.png)
+
+The static graph struggles with many relationships and connections, which you can see here, but it is still very helpful if you just want to get to the point! Sometimes the interactive graph may feel like it gives too much information.
+
+![Sample Static Graph](samples/sample_static_blueprint.png)
+
+Ultimately, what matters is the condensation of information, one line summaries with their sources in the tooltip (the box that comes when you hover over a node or an edge), and the direction and connection between different pieces of information.
+
+Also, the code filters out isolated nodes (points with no connection at all) - hopefully, no fun part (or serious part) gets skipped!
+
+You are welcome to fine-tune this based on your requirements (keep isolated nodes, increase or decrease minimum required confidence for condensation or expansion of the graph, change the AI architecture from Google's Gemini to OpenAI's ChatGPT, tweak the prompt, among others).
+
+P.S. I have added guardrails & fallbacks wherever possible. Check terminal for logs. Whatever you can't find on the screen is probably printed in here!
+
+![Example Terminal Log](samples/terminal_log.png)
 
 ---
 
