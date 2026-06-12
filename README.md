@@ -15,11 +15,8 @@ This tool takes raw, unstructured text and uses **Gemini 2.5 Flash** to extract 
   <img src="https://img.shields.io/badge/Gemini%20AI-2.5%20Flash-orange?style=flat&logo=google&logoColor=white" alt="Gemini">
   <img src="https://img.shields.io/badge/license-MIT-purple?style=flat" alt="License">
 </p>
-<p align="center">
-  <a href="https://semantic-graph-generator.vercel.app">
-    <img src="https://img.shields.io/badge/Live%20Demo-Open%20Website-brightgreen?style=flat-square&logo=googlechrome&logoColor=white" alt="Live Demo">
-  </a>
-</p>
+
+### Check it out at: ![Live Demo](https://semantic-graph-generator.vercel.app")
 
 ---
 
