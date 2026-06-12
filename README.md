@@ -15,6 +15,11 @@ This tool takes raw, unstructured text and uses **Gemini 2.5 Flash** to extract 
   <img src="https://img.shields.io/badge/Gemini%20AI-2.5%20Flash-orange?style=flat&logo=google&logoColor=white" alt="Gemini">
   <img src="https://img.shields.io/badge/license-MIT-purple?style=flat" alt="License">
 </p>
+<p align="center">
+  <a href="https://semantic-graph-generator.vercel.app">
+    <img src="https://img.shields.io/badge/Live%20Demo-Open%20Website-brown?style=for-the-badge" alt="Live Demo">
+  </a>
+</p>
 
 ---
 
@@ -33,6 +38,9 @@ Output:
 Interactive semantic concept graph + static Matplotlib rendering of the same graph
 
 Something like this:
+> Interactive version available at:
+> https://semantic-graph-generator.vercel.app
+
 <table align="center">
 <tr>
 <td width="60%" align="center">
@@ -55,6 +63,7 @@ Something like this:
 
 > [!IMPORTANT]
 > This README is admittedly long. Fortunately, this project was built to solve exactly that problem.
+> Find the README summarized as a concept graph at: https://semantic-graph-generator.vercel.app/readme
 
 ### Semantic Extraction
 
