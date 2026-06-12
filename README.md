@@ -16,7 +16,7 @@ This tool takes raw, unstructured text and uses **Gemini 2.5 Flash** to extract 
   <img src="https://img.shields.io/badge/license-MIT-purple?style=flat" alt="License">
 </p>
 
-### Check it out at: ![Live Demo](https://semantic-graph-generator.vercel.app")
+**Go poke the graph: [Live Demo](https://semantic-graph-generator.vercel.app)**
 
 ---
 
