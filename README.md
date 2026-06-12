@@ -17,7 +17,7 @@ This tool takes raw, unstructured text and uses **Gemini 2.5 Flash** to extract 
 </p>
 <p align="center">
   <a href="https://semantic-graph-generator.vercel.app">
-    <img src="https://img.shields.io/badge/Live%20Demo-Open%20Website-brown?style=for-the-badge" alt="Live Demo">
+    <img src="https://img.shields.io/badge/Deploy-Live%20Demo-000000?style=flat&logo=vercel&logoColor=white" alt="Live Demo">
   </a>
 </p>
 
@@ -37,7 +37,6 @@ Article, chapters, research paper, design document, etc. (Save as `sample.txt` i
 Output:
 Interactive semantic concept graph + static Matplotlib rendering of the same graph
 
-Something like this:
 > Interactive version available at:
 > https://semantic-graph-generator.vercel.app
 
@@ -63,6 +62,7 @@ Something like this:
 
 > [!IMPORTANT]
 > This README is admittedly long. Fortunately, this project was built to solve exactly that problem.
+>
 > Find the README summarized as a concept graph at: https://semantic-graph-generator.vercel.app/readme
 
 ### Semantic Extraction
